@@ -1,10 +1,9 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View, Button, SafeAreaView,Alert } from "react-native";
-import { CreateNativeStackNavigator } from '@react-navigation/native';
 import { NavigationContainer } from '@react-navigation/native';
-import Boton from "./components/Boton";
-import Home from "./components/Home";
-import MainStack from "./navigation/MainStack";
+import Boton from "./Boton";
+import LoginForm from "./LoginForm";
+import Register from "./Register";
 
 
 const image = { uri: "https://reactjs.org/logo-og.png" };
@@ -12,19 +11,35 @@ const Separator = () => (
   <View style={styles.separator} />
 );
 
-function App(){
-  return(
-    <View style={styles.container}>
-      <SafeAreaView style={{ flex: 1}}>
- 
-    
-     <MainStack />
-   
-    
+const Home = ({ navigation }) => (
+  <View style={styles.container}>
+  <SafeAreaView style={{ flex: 1}}>
+<ImageBackground source={image} resizeMode="cover" style={styles.image}>
+  <Text style={styles.text}>My Sat App</Text>
+  <Separator />
+
+  <Boton 
+  text ="registrarme"
+  onPress= {()=>{
+    navigation.navigate('Register',
+    )
+  }}
+  />
+
+<Boton 
+  text ="Iniciar Sesión"
+  onPress= {()=>{
+    navigation.navigate('LoginForm',
+    )
+  }}
+  />
+  </ImageBackground>
     </SafeAreaView> 
   </View> 
-  );
-} 
+  
+    
+ 
+);
 const styles=StyleSheet.create({
   container:{
   
@@ -56,4 +71,5 @@ const styles=StyleSheet.create({
 
 
 })
-export default  App;
+
+export default Home ;
