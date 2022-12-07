@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Stack, Modal, Button, ScrollView, Heading, Box ,Flex,Center} from "native-base";
+import Boton from '../components/Boton';
 import PF from './I_Fisica';
 import Ieps from './I_IEPS';
 import Isan from './I_ISAN';
@@ -12,9 +13,21 @@ const all=()=>{
   return (<NativeBaseProvider>
     <ScrollView>
   <Heading/><Heading/><Center><Heading >Informacion</Heading></Center>
+  
+  
+  <Button  _text={{
+          color: "warmGray.50",
+        
+          fontWeight: "medium"
+        }} shadow={"3"}
+  onPress= {()=>{
+    navigation.navigate('Iva',
+    )
+  }}  
+        >IVA</Button>
+
 <Fisica/>
 <Ips/>
-<ISA/>
 <ISr/>
 <IVa/>
 <Mora/>
@@ -32,27 +45,15 @@ const Fisica = () => {  const [placement, setPlacement] = useState(undefined);
   };
 
   return ( <Box>
-     
-      <Modal isOpen={open} onClose={() => setOpen(false)} safeAreaTop={true}>
-        <Modal.Content maxWidth="350" {...styles[placement]}>
-          <Modal.CloseButton />
-          <Modal.Header>Persona Fisica</Modal.Header>
-          <Modal.Body>
-            <PF/>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button.Group space={2}>
-           
-              <Button onPress={() => {
-              setOpen(false);
-            }}>
-                salir
-              </Button>
-            </Button.Group>
-          </Modal.Footer>
-        </Modal.Content>
-      </Modal>
-    
+      <Boton 
+  text ="IVA"
+  onPress= {()=>{
+    navigation.navigate('Iva',
+    )
+  }}
+  />
+
+
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
