@@ -66,7 +66,7 @@ const LoginForm = ({navigation}) => {
    
     <Box p="2" width="350" height="500" bgColor="lightBlue.100" rounded="xl" shadow={2}>
         <Text size="2xl"> ¡Bienvenido a MySATapp! </Text>
-        <Text size="lg"> Info de la aplicacion </Text>
+        <Text size="lg"> Sabemos que interactuar con el SAT muchas veces </Text>
     </Box>
   </Center>
   </NativeBaseProvider>
