@@ -6,6 +6,8 @@ import LoginForm from "../components/LoginForm";
 import Profile from "../components/Profile";
 import Register from "../components/Register";
 import PerfilUsuario from "../components/PerfilUsuario";
+import Info from "../Screens/Informacion";
+
 
 
 
@@ -23,10 +25,15 @@ return (
             name='Home'
             component={Home}
             />
+             <Stack.Screen 
+            name='Info'
+            component={Info}
+            />
            <Stack.Screen 
             name='LoginForm'
             component={LoginForm}
             />
+          
         
 
 
@@ -44,7 +51,6 @@ return (
             component={PerfilUsuario}
             />
           
-
 
 
 
