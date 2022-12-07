@@ -5,7 +5,7 @@ import Home from "../components/Home";
 import LoginForm from "../components/LoginForm";
 import Profile from "../components/Profile";
 import Register from "../components/Register";
-
+import PerfilUsuario from "../components/PerfilUsuario";
 
 
 const Stack= createNativeStackNavigator()
@@ -36,6 +36,11 @@ return (
             <Stack.Screen 
             name='Profile'
             component={Profile}
+            />
+
+<Stack.Screen 
+            name='PerfilUsuario'
+            component={PerfilUsuario}
             />
           
         </Stack.Navigator>

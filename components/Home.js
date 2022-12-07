@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ImageBackground, StyleSheet, Text, View, Button, SafeAreaView,Alert } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import Boton from "./Boton";
