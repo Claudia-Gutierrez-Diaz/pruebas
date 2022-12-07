@@ -14,10 +14,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { NativeBaseProvider } from 'native-base';
 import 'react-native-gesture-handler';
 
+
+const Borde = () => (
+  <View style={styles.borde} />
+);
+
 const LoginForm = ({navigation}) => {
     return (
-      //Cabecera 
+     
        <NativeBaseProvider>
+        <Borde/>
     <Center>
     <StatusBar bg="#3700B3" barStyle="light-content"/> 
 
@@ -73,4 +79,8 @@ const LoginForm = ({navigation}) => {
 
 );
 };
+
+const styles=StyleSheet.create({
+Borde:{margin:'1.5em'}
+});
 export default LoginForm;
