@@ -6,6 +6,7 @@ import LoginForm from "../components/LoginForm";
 import Profile from "../components/Profile";
 import Register from "../components/Register";
 import PerfilUsuario from "../components/PerfilUsuario";
+import Iva from "../Screens/I_IVA";
 import Info from "../Screens/Informacion";
 const Stack= createNativeStackNavigator()
 const MainStack = () => {
@@ -19,6 +20,10 @@ return (
             <Stack.Screen 
             name='Home'
             component={Home}
+            />
+            <Stack.Screen 
+            name='Iva'
+            component={Iva}
             />
              <Stack.Screen 
             name='Info'

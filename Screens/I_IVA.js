@@ -1,9 +1,10 @@
 import React from "react";
-import { Box, Button, Center, Heading, Text } from "native-base"; 
+import { Box, Button, Center, Heading, Text } from "native-base";
+import { NativeBaseProvider } from "native-base"; 
 import Entypo from 'react-native-vector-icons/Entypo';
 
 const Iva = () => {
-    return (
+    return (<NativeBaseProvider>
     <Center>
       <Box >
           <Heading alignSelf="center"> IVA</Heading>
@@ -16,7 +17,7 @@ const Iva = () => {
       </Box>
       
       
-    </Center>
+    </Center></NativeBaseProvider>
     )
 }
 

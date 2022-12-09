@@ -9,22 +9,19 @@ import Iva from './I_IVA';
 import { NativeBaseProvider } from 'native-base';
 import PM from './I_Moral';
 
-const all=()=>{
+const all=({ navigation })=>{
   return (<NativeBaseProvider>
     <ScrollView>
   <Heading/><Heading/><Center><Heading >Informacion</Heading></Center>
   
   
-  <Button  _text={{
-          color: "warmGray.50",
-        
-          fontWeight: "medium"
-        }} shadow={"3"}
+  <Boton 
+  text ="Iniciar Sesión"
   onPress= {()=>{
     navigation.navigate('Iva',
     )
-  }}  
-        >IVA</Button>
+  }}
+  />
 
 <Fisica/>
 <Ips/>
@@ -44,14 +41,12 @@ const Fisica = () => {  const [placement, setPlacement] = useState(undefined);
     setPlacement(placement);
   };
 
-  return ( <Box>
-      <Boton 
-  text ="IVA"
-  onPress= {()=>{
-    navigation.navigate('Iva',
-    )
-  }}
-  />
+  return ( 
+  
+  
+  
+  <Box>
+  
 
 
       
