@@ -12,6 +12,7 @@ import PM from './I_Moral';
 const all=({ navigation })=>{
   return (<NativeBaseProvider>
     <ScrollView>
+<br/>
 
     <Center>
   <Box p="2" width="350" height="500" bgColor="lightBlue.100" rounded="xl" shadow={2}>
@@ -26,18 +27,14 @@ const all=({ navigation })=>{
           <Box rounded="xl" bgColor="primary.800" height="1" width="300"></Box>
             <br/>
           <HStack space={3}>
-          <Button>
+          
             <IVa/>
-          </Button>
-            <Button>
-              <Ips/>
-            </Button>
-            <Button>
-              ISR
-            </Button>
-            <Button>
-              ISAN
-            </Button>
+
+            <Ips/>
+          
+            <ISr/> 
+
+            <ISA/>
           </HStack>
           </Center>
             <br/>
@@ -46,26 +43,16 @@ const all=({ navigation })=>{
           <Box rounded="xl" bgColor="primary.800" height="1" width="300"></Box>
             <br/>
           <HStack space={3}>
-            <Button>
-              Persona Fisica 
-            </Button>
-            <Button>
-              Persona Moral
-            </Button>
+            <Fisica/>
+            
+            <Mora/>
             </HStack>
           </Center>
           
       </Box>
 
 </Center>
-  
-  
 
-<Fisica/>
-<Ips/>
-<ISr/>
-<IVa/>
-<Mora/>
 </ScrollView>
 
   </NativeBaseProvider> );
@@ -79,20 +66,33 @@ const Fisica = () => {  const [placement, setPlacement] = useState(undefined);
     setPlacement(placement);
   };
 
-  return ( 
+  return ( <Box>
   
-  
-  
-  <Box>
-  
-
-
+  <Modal isOpen={open} onClose={() => setOpen(false)} safeAreaTop={true}>
+        <Modal.Content maxWidth="350" {...styles[placement]}>
+          <Modal.CloseButton />
+          <Modal.Header>Persona Fisica</Modal.Header>
+          <Modal.Body>
+            <PF/>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button.Group space={2}>
+           
+              <Button onPress={() => {
+              setOpen(false);
+            }}>
+                salir
+              </Button>
+            </Button.Group>
+          </Modal.Footer>
+        </Modal.Content>
+      </Modal>
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
-  <Button size="40" bg="primary.300" _text={{
+  <Button bg="primary.300" _text={{
   color: "coolGray.800"
-}}onPress={() => openModal("right")}>Persona Fisica
+}}onPress={() => openModal("center")}>Persona Fisica
  </Button>
 </Flex>
 </Box>    )
@@ -134,9 +134,9 @@ const Ips = () => {  const [placement, setPlacement] = useState(undefined);
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
-  <Button size="40" bg="primary.300" _text={{
+  <Button bg="primary.300" _text={{
   color: "coolGray.800"
-}}onPress={() => openModal("right")}>IEPS
+}}onPress={() => openModal("center")}>IEPS
  </Button>
 </Flex>
 </Box>    )
@@ -177,9 +177,9 @@ const ISA = () => {  const [placement, setPlacement] = useState(undefined);
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
-  <Button size="40" bg="primary.300" _text={{
+  <Button bg="primary.300" _text={{
   color: "coolGray.800"
-}}onPress={() => openModal("right")}>Isan
+}}onPress={() => openModal("center")}>ISAN
  </Button>
 </Flex>
 </Box>    )
@@ -219,9 +219,9 @@ const ISr = () => {  const [placement, setPlacement] = useState(undefined);
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
-  <Button size="40" bg="primary.300" _text={{
+  <Button bg="primary.300" _text={{
   color: "coolGray.800"
-}}onPress={() => openModal("right")}>Isr
+}}onPress={() => openModal("center")}>Isr
  </Button>
 </Flex>
 </Box>    )
@@ -249,7 +249,6 @@ const IVa = () => {  const [placement, setPlacement] = useState(undefined);
           </Modal.Body>
           <Modal.Footer>
             <Button.Group space={2}>
-           
               <Button onPress={() => {
               setOpen(false);
             }}>
@@ -263,9 +262,9 @@ const IVa = () => {  const [placement, setPlacement] = useState(undefined);
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
-  <Button size="40" bg="primary.300" _text={{
+  <Button bg="primary.300" _text={{
   color: "coolGray.800"
-}}onPress={() => openModal("right")}>IVA
+}}onPress={() => openModal("center")}>IVA
  </Button>
 </Flex>
 </Box>    )
@@ -306,9 +305,9 @@ const Mora = () => {  const [placement, setPlacement] = useState(undefined);
       
 
 <Flex direction="column" mb="3.5" mt="3.5">
-  <Button size="40" bg="primary.300" _text={{
+  <Button bg="primary.300" _text={{
   color: "coolGray.800"
-}}onPress={() => openModal("right")}>Persona Moral
+}}onPress={() => openModal("center")}>Persona Moral
  </Button>
 </Flex>
 </Box>    )
