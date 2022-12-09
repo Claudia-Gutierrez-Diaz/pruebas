@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Stack, Modal, Button, ScrollView, Heading, Box ,Flex,Center} from "native-base";
+import { Stack,Text,HStack, Modal, Button, ScrollView, Heading, Box ,Flex,Center} from "native-base";
 import Boton from '../components/Boton';
 import PF from './I_Fisica';
 import Ieps from './I_IEPS';
@@ -12,16 +12,54 @@ import PM from './I_Moral';
 const all=({ navigation })=>{
   return (<NativeBaseProvider>
     <ScrollView>
-  <Heading/><Heading/><Center><Heading >Informacion</Heading></Center>
+
+    <Center>
+  <Box p="2" width="350" height="500" bgColor="lightBlue.100" rounded="xl" shadow={2}>
+          <Heading alignSelf="center">
+            Informacion
+          </Heading>
+          <Text alignSelf="left">
+              Impuestos
+          </Text>
+          
+          <Center>
+          <Box rounded="xl" bgColor="primary.800" height="1" width="300"></Box>
+            <br/>
+          <HStack space={3}>
+          <Button>
+            <IVa/>
+          </Button>
+            <Button>
+              <Ips/>
+            </Button>
+            <Button>
+              ISR
+            </Button>
+            <Button>
+              ISAN
+            </Button>
+          </HStack>
+          </Center>
+            <br/>
+          <Text alignSelf="left"> Tipos de contribuyentes </Text>
+          <Center>
+          <Box rounded="xl" bgColor="primary.800" height="1" width="300"></Box>
+            <br/>
+          <HStack space={3}>
+            <Button>
+              Persona Fisica 
+            </Button>
+            <Button>
+              Persona Moral
+            </Button>
+            </HStack>
+          </Center>
+          
+      </Box>
+
+</Center>
   
   
-  <Boton 
-  text ="Iniciar Sesión"
-  onPress= {()=>{
-    navigation.navigate('Iva',
-    )
-  }}
-  />
 
 <Fisica/>
 <Ips/>
