@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Stack,Text,HStack, Modal, Button, ScrollView, Heading, Box ,Flex,Center} from "native-base";
+import { Link,Text,HStack, Modal, Button, ScrollView, Heading, Box ,Flex,Center} from "native-base";
 import Boton from '../components/Boton';
 import PF from './I_Fisica';
 import Ieps from './I_IEPS';
@@ -46,6 +46,17 @@ const all=({ navigation })=>{
             <Fisica/>
             
             <Mora/>
+            </HStack>
+          </Center>
+            <br/>
+          <Text alignSelf="left"> Visita la pagina oficial del SAT </Text>
+          <Center>
+          <Box rounded="xl" bgColor="primary.800" height="1" width="300"></Box>
+            <br/>
+          <HStack space={3}>
+          <Link href="https://www.sat.gob.mx/home"> <Button size="sm">
+        Visita la pagina .</Button>
+      </Link>
             </HStack>
           </Center>
           

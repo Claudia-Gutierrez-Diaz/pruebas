@@ -14,7 +14,7 @@ const Iva = () => {
           
           <Button size="lg" bgColor="lightblue.100">
           </Button>
-      </Box>
+      </Box> 
       
       
     </Center></NativeBaseProvider>

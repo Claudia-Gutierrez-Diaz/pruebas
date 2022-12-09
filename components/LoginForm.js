@@ -1,24 +1,29 @@
 import React from 'react';
 import {StatusBar} from 'expo-status-bar';
-import { StyleSheet, TextInput,Text, View,Item } from 'react-native';
+import { StyleSheet, TextInput,Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator} from '@react-navigation/native-stack'
 import Boton from "../components/Boton";
+import { Checkbox } from 'native-base';
+import { NativeBaseProvider } from 'native-base';
 import Profile from "./Profile";
 import {AppLoading} from 'expo';
 import {FontAwesome}from '@expo/vector-icons';
 
 const LoginForm = ({navigation}) => {
-    return (
+    return (<NativeBaseProvider>
       <View style={styles.container}>
         < Text style={styles.titulo}>¡Hola!</Text>
         <FontAwesome name='user'size={20}></FontAwesome>
     <TextInput placeholder='clajsds@gmail.com'style={styles.TextInput}/>
     <FontAwesome name='lock'size={20}></FontAwesome>
+  
+    
     <TextInput placeholder='password'style={styles.TextInput}
     secureTextEntry={true}/>
-    
-    <StatusBar style="auto"/>
+   <StatusBar style="auto"/>
+   <Checkbox value="Recordar Clave" accessibilityLabel="This is a dummy checkbox" />Recordar Clave
+   
     <Boton 
   text ="Acceder"
   onPress= {()=>{
@@ -26,7 +31,7 @@ const LoginForm = ({navigation}) => {
        
     )}}
   />
-      </View>
+      </View></NativeBaseProvider>
     );
 };
 
